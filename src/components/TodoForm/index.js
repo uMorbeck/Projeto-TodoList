@@ -5,13 +5,13 @@ export default function TodoForm(props){
     const [input, setInput] = useState(props.edit ? props.edit.value : "");
 
     const inputRef = useRef(null);
-
+    
     useEffect(() => {
         inputRef.current.focus()
     });
 
-    function handleSubmit(sub){
-        sub.preventDefault();
+    function handleSubmit(e){
+        e.preventDefault();
 
         props.onSubmit({
             id: Math.floor(Math.random() * 10000),
@@ -21,8 +21,8 @@ export default function TodoForm(props){
         setInput("");
     };
 
-    function handleChange(chg){
-        setInput(chg.target.value);
+    function handleChange(e){
+        setInput(e.target.value);
     };
 
     return (
@@ -30,15 +30,15 @@ export default function TodoForm(props){
             {props.edit ? (
                 <>
                     <input 
-                        type="text" 
+                        type="text"
                         placeholder="Update Your Item"
                         value={input}
                         onChange={handleChange}
                         ref={inputRef}
                         name="text"
-                        className="todo-input  edit"
+                        className="todo-input + edit"
                     />
-                    <button className="todo-submit-button  edit" type="submit">Update</button>
+                    <button className="todo-submit-button + edit" type="submit">Update</button>
                 </>
             ) : (
             <>

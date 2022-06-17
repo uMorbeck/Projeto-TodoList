@@ -1,6 +1,8 @@
 import React, {useState} from "react";
-import {RiCloseCircleLine} from "react-icons/ri"
+
+import {RiCloseCircleLine, RiCheckboxCircleLine} from "react-icons/ri"
 import {TiEdit} from "react-icons/ti"
+
 import TodoForm from "../TodoForm"
 import "./styles.css";
 
@@ -29,12 +31,15 @@ export default function Todo({todos, completeTodo, removeTodo, updateTodo}) {
         >
             <div 
                 key={todo.id}
-                onClick={() => completeTodo(todo.id)}
                 className="todo-container"
             >
                 {todo.text}
             </div>
             <div className="icons">
+                <RiCheckboxCircleLine
+                    onClick={() => completeTodo(todo.id)}
+                    className="delete-icon"
+                />
                 <RiCloseCircleLine
                     onClick={() => removeTodo(todo.id)}
                     className="delete-icon"

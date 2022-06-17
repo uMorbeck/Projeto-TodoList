@@ -8,27 +8,32 @@
 
 body {
   background: linear-gradient(
-    90deg,
-    rgba(48, 16, 255, 1) 0%,
-    rgba(100, 115, 255, 1) 100%
+    135deg,
+    #251f33 60%,
+    #fa1e4e 100%
   );
 }
 
 .todo-app {
   display: flex;
   flex-direction: column;
-  justify-content: start;
+  justify-content: flex-start;
   width: 520px;
   min-height: 600px;
-  background: #161a2b;
+  background: #181420;
   text-align: center;
   margin: 128px auto;
-  border-radius: 10px;
+  border-radius: 16px;
   padding-bottom: 32px;
 }
 
 h1 {
   margin: 32px 0;
-  color: #fff;
+  color: #a6a4ac;
   font-size: 24px;
+}
+
+.credits {
+  margin-top: 16px;
+  color: #a6a4ac;
 }
